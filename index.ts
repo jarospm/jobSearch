@@ -47,6 +47,14 @@ const searchJobs = async (profession: string, city: string) => {
       console.log(`Publication: ${pubDate.toISOString().split('T')[0]}`);
       console.log('-'.repeat(50));
     });
+
+    // Console.dir with depth: 0 shows only top-level keys
+    console.log('\n--- console.dir(data, { depth: 0 }) ---');
+    console.dir(data, { depth: 0 });
+
+    // Console.dir with depth: 1 reveals one level deeper
+    console.log('\n--- console.dir(data, { depth: 1 }) ---');
+    console.dir(data, { depth: 1 });
   } catch (error) {
     // Catches network failures (no internet, DNS errors, etc.)
     const message = error instanceof Error ? error.message : 'Unknown error';
